@@ -1,0 +1,21 @@
+.tdetails {
+    position: relative;
+    top: 10%;
+    left: 10%;
+    border: 2px solid black;
+    width: 80%;
+}
+
+ul > li {
+    padding: 8px;
+    margin: 5px;
+}
+
+.tbtn {
+    float: right;
+    width: 10%;
+    height: 25%;
+    background-color: #192A56;
+    color: white;
+    border-radius: 5px;
+}

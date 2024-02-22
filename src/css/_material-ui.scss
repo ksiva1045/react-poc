@@ -1,0 +1,105 @@
+header .menu .MuiButton-root {
+    min-width: auto;
+}
+
+.form-group {
+
+    .material-ui-select {
+        min-width: 400px;
+
+        &.domain-select,
+        &.environment-select {
+            min-width: auto;
+            margin: 0 0 0 25px;
+        }
+
+        &.short {
+            min-width: 120px;
+        }
+    }
+
+    .material-ui-date-time {
+        min-width: 400px;
+    }
+
+    .MuiToggleButton-root {
+        margin-top: 10px;
+
+        &:hover {
+            background-color: rgba(var(--green), 0.5);
+            color: $white;
+        }
+
+        &.Mui-selected,
+        &.Mui-selected:hover {
+            background-color: $green;
+            color: $white;
+        }
+    }
+
+    .MuiFormControl-root {
+        max-width: 600px;
+        min-width: 300px;
+    }
+
+    &.required .MuiInputLabel-outlined.MuiInputLabel-shrink {
+        padding-right: 10px;
+    }
+}
+
+.exclusions {
+    .form-group {
+        .MuiToggleButton-root {
+            &:hover {
+                background-color: rgba(var(--red), 0.5);
+            }
+
+            &.Mui-selected,
+            &.Mui-selected:hover {
+                background-color: $red;
+            }
+        }
+    }
+}
+
+.MuiFormLabel-asterisk,
+.MuiInputLabel-asterisk {
+    color: $red;
+}
+
+.MuiInputLabel-outlined.MuiInputLabel-shrink {
+    background-color: $white;
+}
+
+.MuiPopover-root {
+
+    .MuiList-padding {
+        padding: 0;
+    }
+
+    .MuiMenu-paper {
+        padding: 0;
+    }
+
+    .MuiPopover-paper {
+        padding: 10px;
+
+        .MuiTypography-body1 {
+            font-size: 0.9em;
+            color: $dark-gray;
+        }
+    }
+}
+
+fieldset.form-groups[disabled] .MuiInputBase-root {
+    color: rgba(0, 0, 0, 0.38);
+    cursor: default;
+}
+
+fieldset.form-groups[disabled] .MuiInputBase-root:hover fieldset {
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+fieldset.form-groups[disabled] .MuiInputBase-input {
+    opacity: 1;
+}

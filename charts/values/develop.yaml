@@ -1,0 +1,7 @@
+# Put your values for dev cluster here
+global:
+  domain: aa.dev.dsawsnprd.massmutual.com
+app:
+  env:
+    - name: PORT
+      value: '8080'

@@ -1,0 +1,98 @@
+@import 'variables';
+@import 'buttons';
+@import 'icons';
+@import 'header';
+@import 'section';
+@import 'footer';
+@import 'tables';
+@import 'forms';
+@import 'review-worksheet';
+@import 'material-ui';
+@import 'messages';
+@import 'popovers';
+@import 'modal';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: proxima-nova, 'Century Gothic', arial, sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    color: $dark-gray;
+    background: $white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+.App {
+    .container {
+        margin: 0 auto 0 auto;
+        width: 80%;
+        min-width: $container-min-width;
+    }
+
+    h3 {
+        font-weight: normal;
+    }
+
+    .small-text {
+        font-size: 0.8em;
+    }
+
+    .large-text {
+        font-size: 2em;
+    }
+
+    .very-large-text {
+        font-size: 3em;
+    }
+
+    .red {
+        color: $red;
+    }
+
+    .dark-blue {
+        color: $dark-blue;
+    }
+
+    .white {
+        color: $white;
+    }
+
+    .page-body {
+        padding-top: $header-height;
+    }
+}
+
+/* when printing the review worksheet (or any other page) hide the header and footer */
+@media print {
+
+    header,
+    footer,
+    .flash-message {
+        display: none;
+    }
+
+    .App .container {
+        padding-top: 0;
+        margin: 0;
+        width: auto;
+        min-width: none;
+    }
+
+    #section_review h3 {
+        display: none;
+    }
+}

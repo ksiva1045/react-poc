@@ -1,0 +1,60 @@
+  .navbar {
+    margin: 0;
+    padding: 0;
+    /* background-color:#192A56;  */
+    background-color: #012f6b;
+    color: white; 
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    height: 10vh;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .logo {
+  }
+  
+  .menu {
+    display: flex;
+    color: white;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+  }
+
+  .apptitle {
+    position: relative;
+    font-size: 24px;
+  }
+
+  /* span:before {
+    content:'|';
+    padding: 15px;
+    margin: 5px;
+  } */
+  .menu {
+    margin-top: 10px;
+    display: flex;
+    color: white;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 70%;
+  }
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .menu {
+      margin-top: 10px;
+      display: flex;
+      color: white;
+      flex-direction: row;
+      justify-content: flex-end;
+      width: 70%;
+    }
+  }

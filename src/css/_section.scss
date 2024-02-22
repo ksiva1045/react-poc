@@ -1,0 +1,30 @@
+section {
+
+    .data-count-number {
+        display: inline-flex;
+        font-weight: bold;
+        height: 57px;
+        color: $dark-gray;
+        font-size: 1.2em;
+        justify-content: center;
+        align-items: center;
+        margin-left: 25px;
+    }
+
+    .data-list {
+        display: inline-block;
+        position: relative;
+        max-width: 99%;
+        min-width: 1000px;
+        max-height: 450px;
+        overflow-y: auto;
+        border: 1px solid $light-gray;
+        border-radius: $border-radius;
+
+        .no-matches {
+            text-align: center;
+            color: $red;
+            margin: 15px 0;
+        }
+    }
+}

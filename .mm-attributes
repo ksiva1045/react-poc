@@ -1,0 +1,25 @@
+---
+version: v1.0.0
+application-attributes:
+  escalation-email: sabrams61@massmutual.com
+  app-group: edap
+  app: Core Data Platform
+  component: react-app-template
+  type: web
+  sdlc-phase: active
+  user-base: internal
+  notes: This is a boilerplate react template that can be cloned and used to set up new UI apps
+devops-attributes:
+  host-environment: none
+  jira-bucket: EDAP
+  ci-tooling: none
+  cd-tooling: none
+  dev-branch: main
+  includes-iac: false
+  iac-tooling:
+organization-attributes:
+  division: Data
+  department: Data Management & Engineering
+  sub-department: Core Data Platform Engineering
+  group: EDAP
+  team: EDAP

@@ -1,0 +1,35 @@
+{{- if .Values.ingress.enabled -}}
+{{- $serviceName := .Values.service.name -}}
+{{- $servicePort := .Values.service.externalPort -}}
+{{- $domain := .Values.global.domain -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ .Chart.Name }}
+    chart: {{ template "fullname" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+{{- if .Values.ingress.annotations }}
+  annotations:
+{{ toYaml .Values.ingress.annotations | indent 4 }}
+{{- end }}
+spec:
+  rules:
+  {{- if .Values.ingress.subdomains }}
+  {{- range $subdomain := .Values.ingress.subdomains }}
+  - host: "{{ $subdomain }}.{{ $domain }}"
+    http:
+      paths:
+      - backend:
+          serviceName: {{ $serviceName }}
+          servicePort: {{ $servicePort }}
+  {{- end -}}
+  {{- end }}
+  tls:
+  - hosts:
+  {{- range $subdomain := .Values.ingress.subdomains }}
+    - "{{ $subdomain }}.{{ $domain }}"
+  {{- end -}}
+{{- end -}}

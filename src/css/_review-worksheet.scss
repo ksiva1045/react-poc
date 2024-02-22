@@ -1,0 +1,61 @@
+#review_worksheet {
+    display: inline-grid;
+    grid-template-columns: max-content auto;
+    width: 100%;
+
+    .section-name {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background: $dark-blue;
+        color: $white;
+        padding: 10px 10px;
+        font-weight: bold;
+        margin-top: 20px;
+
+        &#section-1 {
+            margin-top: 0;
+        }
+
+        span {
+            &.go-section {
+                cursor: pointer;
+
+                .icon {
+                    color: $white;
+                    margin-left: 5px;
+                    visibility: hidden;
+                }
+
+                &:hover {
+                    .icon {
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+
+    .label,
+    .value {
+        color: $black;
+        padding: 10px 10px;
+        border-bottom: 1px solid $light-gray;
+    }
+
+    .value {
+        color: $dark-gray;
+    }
+
+    .last-field {
+        border-bottom: 0;
+    }
+
+    .still-required {
+        color: $black;
+    }
+
+    .config-code {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}

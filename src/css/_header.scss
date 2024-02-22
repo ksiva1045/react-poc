@@ -1,0 +1,76 @@
+$header-padding-top: 25px;
+
+header {
+    color: $dark-blue;
+    background: $white;
+    position: fixed;
+    width: inherit;
+    min-width: $container-min-width;
+    height: $header-height;
+    z-index: 100;
+    padding-top: $header-padding-top;
+    border-bottom: 2px solid #002f6c;
+
+    h1 {
+        font-size: 2em;
+        font-weight: 300;
+        margin: 0 0 1rem;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .site-header__logo {
+        position: absolute;
+        width: 213.5px;
+        height: 25.2px;
+        right: 0;
+        top: $header-padding-top;
+    }
+
+    .menu {
+        position: absolute;
+        right: 0;
+
+        button {
+            margin: 0;
+            background: $light-gray;
+            min-width: auto;
+        }
+    }
+
+    .breadcrumb {
+        padding: 0 0 15px;
+
+        ol {
+            padding: 0;
+            margin: 0;
+            white-space: nowrap;
+
+            li {
+                display: inline-block;
+                padding: 10px;
+                border: 1px solid $white;
+                border-radius: 18px;
+                margin-right: 5px;
+                color: $dark-gray;
+                text-transform: uppercase;
+                font-size: 0.8em;
+                transition: color 150ms;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $light-blue;
+                }
+
+                &.active,
+                &.active:hover {
+                    color: $dark-blue;
+                    border-color: $dark-blue;
+                    background: $white;
+                    text-decoration: none;
+                    cursor: default;
+                }
+            }
+        }
+    }
+}

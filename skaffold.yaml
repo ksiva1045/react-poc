@@ -1,0 +1,33 @@
+apiVersion: skaffold/v1beta2
+kind: Config
+build:
+  artifacts:
+  - image: <react-template-app>
+    context: .
+    docker:
+      dockerfile: Dockerfile
+      target:
+      buildArgs:
+        APP_NAME: <react-template-app>
+  tagPolicy:
+    envTemplate:
+      template: '{{.DOCKER_REGISTRY}}/{{.ORG}}/{{.IMAGE_NAME}}:{{.VERSION}}'
+  local:
+    useBuildkit: true
+deploy:
+  kubectl: {}
+profiles:
+- name: dev
+  build:
+    tagPolicy:
+      envTemplate:
+        template: '{{.DOCKER_REGISTRY}}/{{.IMAGE_NAME}}:{{.DIGEST_HEX}}'
+    local: {}
+  deploy:
+    helm:
+      releases:
+      - name: <react-template-app>
+        chartPath: charts/<react-template-app>
+        setValueTemplates:
+          image.repository: '{{.DOCKER_REGISTRY}}/{{.IMAGE_NAME}}'
+          image.tag: '{{.DIGEST_HEX}}'

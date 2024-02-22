@@ -1,0 +1,44 @@
+.flash-message {
+    text-align: center;
+    padding: 25px;
+    position: relative;
+    border-bottom: 1px solid;
+
+    &.error {
+        background-color: rgba($red, 0.75);
+        border-color: $red;
+        color: $white;
+
+        .close .i-button {
+            background: $red;
+        }
+    }
+
+    &.page-message {
+        background-color: rgba($green, 0.75);
+        border-color: $green;
+        color: $white;
+
+        .close .i-button {
+            background: $green;
+        }
+    }
+
+    &.loading {
+        background-color: rgba($light-gray, 1);
+        border-color: $med-gray;
+        color: $dark-gray;
+
+        .icon {
+            margin-right: 10px;
+        }
+
+        .close .i-button {
+            background: $med-gray;
+        }
+    }
+
+    .close {
+        float: right;
+    }
+}

@@ -1,0 +1,4 @@
+# Put your values for Prod env here
+global:
+    replicaCount: 1
+    domain: aa-prod.dsawsprd.massmutual.com

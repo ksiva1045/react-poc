@@ -1,0 +1,237 @@
+http://localhost:4000/api/server/all/os (GET)
+
+{
+    "servers": [
+        {
+            "name": "Linux-Server"
+        },
+        {
+            "name": "Unix-Server"
+        },
+        {
+            "name": "Windows-Server"
+        }
+    ]
+}
+
+
+
+
+http://localhost:4000/api/server/all/Linux-Server (GET)
+
+{
+    "servers": [
+        {
+            "name": "prdlx633",
+            "env": "Production"
+        },
+        {
+            "name": "devlx12972",
+            "env": "Development"
+        },
+        {
+            "name": "vrflx304",
+            "env": "QA"
+        }
+    ]
+}
+
+
+http://localhost:4000/api/server/bs/all (POST)
+
+Request:
+
+{
+ 		"servers": [
+ 			{"name": "prdlx633"},
+ 			{"name": "vrflx304"}
+ 		]
+ 	}
+	
+Response:	
+
+{
+    "servers": [
+        {
+            "businessServices": [
+                {
+                    "itCIContacts": "Amruta Kumar Dangua, Anil Kumar Katam, Devi Priyanka Sundarapalli, Jagadeesh Besthavemula, Lakshmi Kalyani Surapaneni, Narasimhareddy Chennareddy, Sulaiman Mohammed, Venkateswara Reddy Nalagatla",
+                    "name": "CSD Corporate Chargeback Data Load to ODS DEV",
+                    "ownedBy": "Yusuf Bepari"
+                },
+                {
+                    "itCIContacts": "",
+                    "name": "NBS Staging Database DEV",
+                    "ownedBy": "Sandra Page"
+                }
+            ],
+            "name": "prdlx633"
+        },
+        {
+            "businessServices": [
+                {
+                    "itCIContacts": "",
+                    "name": "Life In-Force Illustration Router QA",
+                    "ownedBy": "Ryan Dalessio"
+                },
+                {
+                    "itCIContacts": "Harikrishna Atmakuri, Lina Guzman-Edwards, Navid Basha A, Ravi Aritakula",
+                    "name": "FPAS (Financial Planning Administration System) QA",
+                    "ownedBy": "Asjad Chaudhary"
+                }
+            ],
+            "name": "vrflx304"
+        }
+    ]
+}
+
+BS Owner and IT contacts field should display every itCIContact followed by the name of the server
+
+eg: Amruta Kumar Dangua - prdlx633
+    Anil Kumar Katam    - prdlx633
+    ...
+
+
+http://localhost:9090/v1/ticket/create (POST)
+Request from front-end:
+{
+        "osName": "Linux Server",
+        "servers":[
+            {"name": "prdlx633"},
+            {"name":""}
+        ],
+        "activityDateAndTime": "",
+        "description": "Hi  testing"
+    }
+Response from back-end:
+{
+    "id": 3,
+    "createdDate": "2023-12-27T21:01:28.4875947",
+    "eventDescription": "Hi  testing",
+    "status": "OPENED",
+    "subTicketDetails": [
+        {
+            "id": 11,
+            "status": "OPENED",
+            "serverDetails": {
+                "id": 2,
+                "name": "devlx12972",
+                "typeOfServer": "Linux Server",
+                "ciOwnerGroup": "New Business and Payment Services Support",
+                "ownedBy": "Sandra Page",
+                "supportGroup": "Unix Engineering",
+                "environment": "Development",
+            },
+            "businessServiceDetails": {
+                "id": 8,
+                "name": "Client Medical Interview (CMI) DEV",
+                "ownedBy": "Sandra Page",
+                "ownerGroup": "Algo Team",
+                "supportGroup": "Algo Team",
+                "serviceType": "Usage::Usage",
+                "itCIContacts": "Sandra Page",
+                "environment": "Development"
+            },
+            "createdDate": "2023-12-27T21:01:28.8008815"
+        },
+        {
+            "id": 12,
+            "status": "OPENED",
+            "serverDetails": {
+                "id": 1,
+                "name": "prdlx633",
+                "typeOfServer": "Linux Server",
+                "ciOwnerGroup": "IAM Plan and Build",
+                "ownedBy": "Jacqueline Grochowalski",
+                "supportGroup": "Unix Engineering",
+                "environment": "Production",
+            },
+            "businessServiceDetails": {
+                "id": 5,
+                "name": "Acceptto credential provider",
+                "ownedBy": "Jacqueline Grochowalski",
+                "ownerGroup": "IAM Plan and Build",
+                "supportGroup": "IAM Plan and Build",
+                "serviceType": "Containment ::Containment",
+                "itCIContacts": "Adam Bergstrom, Balamurugan Thirunavukarasu, James Wierzba",
+                "environment": "Production"
+            },
+            "createdDate": "2023-12-27T21:01:28.7877568"
+        },
+        {
+            "id": 13,
+            "status": "OPENED",
+            "serverDetails": {
+                "id": 2,
+                "name": "devlx12972",
+                "typeOfServer": "Linux Server",
+                "ciOwnerGroup": "New Business and Payment Services Support",
+                "ownedBy": "Sandra Page",
+                "supportGroup": "Unix Engineering",
+                "environment": "Development"
+            },
+            "businessServiceDetails": {
+                "id": 9,
+                "name": "New Business Requirements Automation DEV",
+                "ownedBy": "Sandra Page",
+                "ownerGroup": "Algo Team",
+                "supportGroup": "IAM Plan and Build",
+                "serviceType": "Usage::Usage",
+                "itCIContacts": "Ruth Meyer, Tatyana Gut",
+                "environment": "Development"
+            },
+            "createdDate": "2023-12-27T21:01:28.8008815"
+        },
+        {
+            "id": 14,
+            "status": "OPENED",
+            "serverDetails": {
+                "id": 2,
+                "name": "devlx12972",
+                "typeOfServer": "Linux Server",
+                "ciOwnerGroup": "New Business and Payment Services Support",
+                "ownedBy": "Sandra Page",
+                "supportGroup": "Unix Engineering",
+                "environment": "Development",
+            },
+            "businessServiceDetails": {
+                "id": 7,
+                "name": "AURA Rules Engine (Service - Domain and BRMS) DEV",
+                "ownedBy": "Sandra Page",
+                "ownerGroup": "New Business and Payment Services Support",
+                "supportGroup": "New Business Prod Support",
+                "serviceType": "Usage::Usage",
+                "itCIContacts": "Toni Brady",
+                "environment": "Development"
+            },
+            "createdDate": "2023-12-27T21:01:28.8008815"
+        },
+        {
+            "id": 15,
+            "status": "OPENED",
+            "serverDetails": {
+                "id": 2,
+                "name": "devlx12972",
+                "typeOfServer": "Linux Server",
+                "ciOwnerGroup": "New Business and Payment Services Support",
+                "ownedBy": "Sandra Page",
+                "supportGroup": "Unix Engineering",
+                "environment": "Development",
+            },
+            "businessServiceDetails": {
+                "id": 6,
+                "name": "Algorithmic Underwriting (Aura) DEV",
+                "ownedBy": "Sandra Page",
+                "ownerGroup": "New Business and Payment Services Support",
+                "supportGroup": "New Business Prod Support",
+                "serviceType": "Usage::Usage",
+                "itCIContacts": "Sandra Page",
+                "environment": "Development"
+            },
+            "createdDate": "2023-12-27T21:01:28.8008815"
+        }
+    ]
+}
+
+
+This response data should be displayed on TicketDetails component after clicking on create button in TicketForm component

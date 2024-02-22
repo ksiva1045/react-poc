@@ -1,0 +1,5 @@
+
+dependencies:
+- alias: preview
+  name: <react-app-template>
+  repository: file://../<react-app-template>

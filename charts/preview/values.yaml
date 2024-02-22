@@ -1,0 +1,14 @@
+global:
+  domain: aa.dsawsnprd.massmutual.com
+preview:
+  ingress:
+    subdomains:
+      - BRANCH_NAME
+  app:
+    env:
+    - name: PORT
+      value: "8080"
+  image:
+    repository: test
+    tag: test
+    pullPolicy: IfNotPresent

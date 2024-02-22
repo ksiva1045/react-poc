@@ -1,0 +1,16 @@
+---
+# Versioning from the start even though it is not used quite yet.  Please make sure to include
+schema: 1
+# This is the name in the URL for your org.
+# Example  https://app.snyk.io/org/software-security would be orgName: software-security
+orgName: edap
+# This should always be the same
+integrationName: github-enterprise
+# Optional: any tags present here will be applied to *all* projects created by this import action
+# We don't support attributes at this time
+tags:
+  application: react-app-template
+# Optional: provide one or more branches for import
+# If not specified the default branch will be selected
+branches:
+  - main

@@ -1,0 +1,108 @@
+button {
+    padding: 10px;
+    color: $white;
+    background: rgba($light-blue, $icon-opacity);
+    border-radius: $border-radius;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-right: 15px;
+    transition: background 150ms;
+
+    &:hover {
+        cursor: pointer;
+        background: $light-blue;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.i-button {
+    background: rgba($light-blue, $icon-opacity);
+    border: 0;
+    border-radius: $border-radius;
+    padding: 3px 10px;
+    color: $white;
+    font-weight: bold;
+    font-size: 1em;
+    margin-right: 5px;
+
+    &:hover {
+        background: $light-blue;
+    }
+
+    &.dark-gray {
+        background: rgba($dark-gray, $icon-opacity);
+    }
+
+    &.dark-gray:hover {
+        background: $dark-gray;
+    }
+
+    &.green {
+        background: rgba($green, $icon-opacity);
+    }
+
+    &.green:hover {
+        background: $green;
+    }
+
+    i {
+        color: $white;
+        background: transparent;
+    }
+}
+
+button.disabled,
+button:disabled,
+button:disabled:hover,
+.i-button:disabled,
+.i-button:disabled:hover {
+    cursor: default;
+    background: $med-gray;
+}
+
+.actions {
+
+    button {
+        margin-right: 15px;
+        color: $white;
+
+        &.cancel {
+            background: $med-gray;
+        }
+
+        &.reset,
+        &.cancel {
+            background: rgba($red, 0.85);
+
+            &:hover {
+                background: $red;
+            }
+        }
+
+        &:disabled,
+        &:disabled:hover {
+            cursor: default;
+            background: $med-gray;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        .icon {
+            font-size: 1em;
+            color: $white;
+            float: right;
+            margin: 0 0 0 5px;
+
+            &.left {
+                float: left;
+                margin: 0 5px 0 0;
+            }
+        }
+    }
+}

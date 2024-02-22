@@ -1,0 +1,99 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    thead {
+        background: $dark-blue;
+    }
+
+    tbody {
+        font-size: 1.0em;
+    }
+
+    thead th,
+    tbody td {
+        white-space: nowrap;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    &.striped {
+        border-collapse: collapse;
+        border-spacing: 0;
+
+        thead {
+            background: $dark-blue;
+            color: $white;
+            font-size: 0.8em;
+            text-transform: uppercase;
+
+            th {
+                padding: 10px 10px;
+                text-align: left;
+                font-weight: 900;
+                height: 30px;
+                line-height: 30px;
+
+                &.actions {
+                    text-align: center;
+                }
+
+                &.sortable {
+                    cursor: pointer;
+
+                    .sort-icon {
+                        margin-left: 3px;
+                        position: relative;
+                        top: 4px;
+                        font-size: 1.4em;
+
+                        &.inactive {
+                            color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+
+        tbody {
+
+            tr {
+                &:nth-of-type(even) {
+                    background: rgba($light-gray, 0.5);
+                }
+
+                &:hover,
+                &:hover td {
+                    background-color: rgba($light-blue, 0.2);
+                }
+
+                td {
+                    padding: 10px 10px;
+                    color: $black;
+
+                    &.actions {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    /* table with scrollable tbody */
+    &.scroll {
+
+        thead {
+            position: sticky;
+            top: 0;
+        }
+
+        tbody {
+            max-height: 400px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+    }
+}

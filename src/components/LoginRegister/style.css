@@ -1,0 +1,57 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; 
+  }
+  
+  .form-box {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .form-group {
+    margin: 15px;
+    padding: 5px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+  }
+  
+  .lgnbutton {
+    width: 85%;
+    padding: 10px;
+    background-color: #192A56;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-switch {
+    color: #192A56;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .form-switch:hover {
+    text-decoration: underline;
+  }
+  
